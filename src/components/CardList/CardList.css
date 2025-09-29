@@ -1,0 +1,9 @@
+.card-item {
+    padding-top: 46px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: baseline;
+    gap: 32px;
+
+}
