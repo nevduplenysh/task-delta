@@ -5,9 +5,14 @@
     gap: 8px
 }
 
+.card-image-container {
+    height: 216px;
+}
+
 .card-image {
     border-radius: 8px;
-    height: 216px;
+    height: 100%;
+    width: 100%;
 }
 
 .card-text {

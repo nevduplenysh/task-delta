@@ -24,12 +24,10 @@ export function CardList() {
 
     const handleClickOpen = (card: CardListI) => {
         setSelectedCard(card);
-        console.log(1)
     }
 
     const handleClickClose = () => {
         setSelectedCard(null);
-        console.log(2)
     }
 
     
@@ -39,7 +37,7 @@ export function CardList() {
                  <CardItem key={item.id} id={item.id} image={item.image} onClick={() => handleClickOpen(item)}/>
             ))}
             {selectedCard && (
-                <CardModal id={selectedCard.id} image={selectedCard.image} onClose={() => handleClickClose()}/>
+                <CardModal id={selectedCard.id} image={selectedCard.image} onClick={() => handleClickClose()}/>
             )}
         </div>
     )
