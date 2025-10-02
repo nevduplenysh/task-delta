@@ -70,5 +70,27 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
+    cursor: pointer;
     color: #FFFFFF;
+}
+
+.comments-list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-top: 32.5px;
+    font-family: 'Inter';
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.comment {
+    color: rgba(55, 65, 81, 1);
+    padding-bottom: 18px;
+}
+
+.comment-item {
+    padding-bottom: 24px;
 }

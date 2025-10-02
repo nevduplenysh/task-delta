@@ -14,10 +14,16 @@ export function CardList() {
     const [selectedCard, setSelectedCard] = useState<CardListI | null>(null)
 
     useEffect(() => {
-        async function fetchData() {
-            const response = await fetch('http://test-backend.itdelta.agency/api/images')
-            const data = await response.json();
-            setData(data);            
+        function fetchData() {        
+            const controller = new AbortController();
+            const signal = controller.signal;
+
+            fetch('http://test-backend.itdelta.agency/api/images', { signal })
+            .then(res => res.json())
+            .then(data => setData(data))
+            return () => {
+                controller.abort()
+            }
         }
         fetchData();
     }, []);
@@ -37,7 +43,7 @@ export function CardList() {
                  <CardItem key={item.id} id={item.id} image={item.image} onClick={() => handleClickOpen(item)}/>
             ))}
             {selectedCard && (
-                <CardModal id={selectedCard.id} image={selectedCard.image} onClick={() => handleClickClose()}/>
+                <CardModal id={selectedCard.id} onClick={() => handleClickClose()}/>
             )}
         </div>
     )

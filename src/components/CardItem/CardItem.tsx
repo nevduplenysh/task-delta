@@ -12,8 +12,7 @@ const CardItem = (props: CardItemProps) => (
             <img
                 className="card-image"
                 src={props.image}
-                alt={`${props.id}`}
-                
+                alt={`${props.id}`}              
             />
         </div>
         <p className="card-text">id: {props.id}</p>
